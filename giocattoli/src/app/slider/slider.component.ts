@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
 import { Giocattolo } from '../model/Giocattolo';
 
 @Component({
@@ -7,12 +7,10 @@ import { Giocattolo } from '../model/Giocattolo';
   styleUrls: ['./slider.component.css']
 })
 export class SliderComponent {
-  giocattolo !: Giocattolo;
+  @Output() giocattoli !: Giocattolo[];
 
-  setGiocattolo(giocattolo: Giocattolo){
-    this.giocattolo = giocattolo;
+  setGiocattolo(giocattoli: Giocattolo[]) {
+    this.giocattoli = giocattoli;
   }
-
-  
 
 }

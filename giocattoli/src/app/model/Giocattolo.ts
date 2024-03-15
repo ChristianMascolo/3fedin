@@ -3,4 +3,5 @@ export interface Giocattolo{
     nome: string,
     prezzo: number,
     pegi: number,
+    id: number,
 }
