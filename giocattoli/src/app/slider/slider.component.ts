@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Giocattolo } from '../model/Giocattolo';
 
 @Component({
   selector: 'app-slider',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./slider.component.css']
 })
 export class SliderComponent {
+  giocattolo !: Giocattolo;
+
+  setGiocattolo(giocattolo: Giocattolo){
+    this.giocattolo = giocattolo;
+  }
+
+  
 
 }
