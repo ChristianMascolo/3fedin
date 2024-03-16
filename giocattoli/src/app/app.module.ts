@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SliderComponent } from './slider/slider.component';
 import { GiocattoloComponent } from './giocattolo/giocattolo.component';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { GiocattoloComponent } from './giocattolo/giocattolo.component';
     BrowserModule,
     AppRoutingModule,
     MatSliderModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

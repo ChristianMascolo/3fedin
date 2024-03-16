@@ -31,4 +31,22 @@ export class AppComponent {
     return `${value}`;
   }
 
+  nextIndex(){
+    if(this.valore == this.giocattoli.length){
+      console.log("valore massimo");
+      this.valore -= this.giocattoli.length;
+      console.log(this.valore);
+    }
+
+    this.valore += 1;
+  }
+
+  prevIndex(){
+    if(this.valore == 0){
+      this.valore = 0;
+    }
+
+    this.valore -= 1;
+  }
+
 }
