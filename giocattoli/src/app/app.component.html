@@ -16,28 +16,20 @@
   }
 </style>
 
-<h3>Valore {{valore}}</h3>
 <div class="div_wrapper" >
   <div>
     <mat-card class="card">
       <mat-card-header>
-        <div mat-card-avatar class="header-image"></div>
-        <mat-card-title>{{giocattoli[valore].nome}}</mat-card-title>
+        <mat-card-title><strong>{{giocattoli[valore].nome}}</strong></mat-card-title>
       </mat-card-header>
       <img mat-card-image src={{giocattoli[valore].image}} alt="Photo of a Shiba Inu">
       <mat-card-content>
         <p>
-          The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-          A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-          bred for hunting.
+          {{giocattoli[valore].descrizione}}
         </p>
       </mat-card-content>
-      <mat-card-actions>
-        <button mat-button>LIKE</button>
-        <button mat-button>SHARE</button>
-      </mat-card-actions>
     </mat-card>
-    <mat-slider min="0" max={{giocattoli.length}} step="1" showTickMarks discrete [displayWith]="fmt">
+    <mat-slider min="0" max={{giocattoli.length}} step="1" showTickMarks discrete [displayWith]="formatLabel">
       <input matSliderThumb>
     </mat-slider>
   </div>
