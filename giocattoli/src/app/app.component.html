@@ -20,7 +20,8 @@
   <div>
     <mat-card class="card">
       <mat-card-header>
-        <mat-card-title><strong>{{giocattoli[valore].nome}}</strong></mat-card-title>
+        <mat-card-title><strong>Nome: {{giocattoli[valore].nome}}</strong></mat-card-title>
+        <mat-card-subtitle>Prezzo: {{giocattoli[valore].prezzo}}€</mat-card-subtitle>
       </mat-card-header>
       <img mat-card-image src={{giocattoli[valore].image}} alt="Photo of a Shiba Inu">
       <mat-card-content>
@@ -29,12 +30,12 @@
         </p>
       </mat-card-content>
     </mat-card>
-    <mat-slider min="0" max={{giocattoli.length}} step="1" showTickMarks discrete [displayWith]="formatLabel">
+    <!-- <mat-slider min="1" max={{giocattoli.length}} step="1" showTickMarks discrete [displayWith]="formatLabel">
       <input matSliderThumb>
-    </mat-slider>
+    </mat-slider> -->
     <div>
-      <button mat-button (click)="nextIndex()">next</button>
-      <button mat-button (click)="prevIndex()">prev</button>
+      <button mat-button (click)="prevIndex()"><mat-icon>chevron_left</mat-icon></button>
+      <button mat-button (click)="nextIndex()"><mat-icon>chevron_right</mat-icon></button>
     </div>
   </div>
 </div>

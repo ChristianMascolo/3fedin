@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { SliderComponent } from './slider/slider.component';
 import { GiocattoloComponent } from './giocattolo/giocattolo.component';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { MatButtonModule } from '@angular/material/button';
     AppRoutingModule,
     MatSliderModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
