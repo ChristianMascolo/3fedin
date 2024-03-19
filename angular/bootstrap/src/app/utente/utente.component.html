@@ -1,0 +1,14 @@
+<table class="table table-bordered">
+    <tr>
+        <th>Nome</th>
+        <th *ngIf="visible">Cognome</th>
+        <th>Età</th>
+    </tr>
+    <tbody>
+        <tr *ngFor="let el of utenti" [ngClass]="{'table-danger': el.eta<18 , 'table-success': el.eta >18}">
+            <td>{{ el.nome }}</td>
+            <td *ngIf="visible">{{ el.cognome }}</td>
+            <td>{{ el.eta }}</td>
+        </tr>
+    </tbody>
+</table>

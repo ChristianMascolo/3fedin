@@ -1,20 +1,10 @@
-<table class="table table-bordered">
-  <tr>
-    <th>Nome</th>
-    <th *ngIf="visibile">Cognome</th>
-    <th>Età</th>
-  </tr>
-  <tbody>
-    <tr *ngFor="let el of users" [ngClass]="{'table-danger': el.eta<18 , 'table-success': el.eta >18}">
-      <td>{{ el.nome }}</td>
-      <td *ngIf="visibile">{{ el.cognome }}</td>
-      <td>{{ el.eta }}</td>
-    </tr>
-  </tbody>
-</table>
-<button (click)="toggleSurname()"><mat-icon>remove_red_eye</mat-icon></button>
+<app-utente [utenti]="users"></app-utente>
+<button (click)="setVisibleChild()">Mostra/Nascondi Cognomi</button>
 
-<div id="carouselExampleFade" class="carousel slide carousel-fade">
+<button (click)="distruggi = !distruggi">Toggle</button>
+<app-lifecycle [testo]="'ciao'" *ngIf="!distruggi"></app-lifecycle>
+
+<!-- <div id="carouselExampleFade" class="carousel slide carousel-fade">
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img src="{{gallery[0]}}" class="d-block w-100" alt="...">
@@ -34,4 +24,4 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
-</div>
+</div> -->

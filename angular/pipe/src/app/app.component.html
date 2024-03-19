@@ -1,0 +1,8 @@
+<div *ngFor="let u of utenti | searchString: 'nome':'christian'">
+    {{u.nome | lower}}
+</div>
+<div>{{"" | upper}}</div>
+<div>{{" 2024-03-19" | moment:"ll" }}</div>
+<div>{{date | moment:"DD/MM/YYYY"}}</div>
+<div>{{date | moment:"HH:mm"}}</div>
+<div>{{date }}</div>
