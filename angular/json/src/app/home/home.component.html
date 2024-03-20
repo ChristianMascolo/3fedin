@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <ng-container *ngFor="let b of bandiere">
+      <div class="col-md-2 mb-2">
+        <div class="card">
+          <img class="card-img-top" src="{{b['flag']}}" (click)="redirect(b)">
+          <div class="card-body">
+            <h5 class="card-title">{{ b['name']}}</h5>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
