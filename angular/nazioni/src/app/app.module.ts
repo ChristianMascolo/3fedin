@@ -7,13 +7,15 @@ import { ListaComponent } from './lista/lista.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DettaglioComponent } from './dettaglio/dettaglio.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FilterPipe } from './pipes/filter.pipe';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ListaComponent,
-    DettaglioComponent
+    DettaglioComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

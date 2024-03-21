@@ -10,6 +10,7 @@ import { NationService } from '../services/nation.service';
 })
 export class DettaglioComponent {
   nation: Nation = new Nation;
+  //nation !: any;
 
   constructor(private route: ActivatedRoute, private service: NationService) {
   }
@@ -20,6 +21,7 @@ export class DettaglioComponent {
         this.service.getNation(el.params.name).subscribe({
           next: (res: any)=>{
             this.createNation(res);
+            //this.nation = res;
           }
         });
       }
