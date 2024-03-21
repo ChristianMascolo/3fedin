@@ -1,0 +1,5 @@
+<ul class="list-group" *ngIf="nomi">
+    <li class="list-group-item" *ngFor="let n of nomi" [routerLink]="['dettaglio',n.name.common]">
+        {{n.name.common}}
+    </li>
+</ul>

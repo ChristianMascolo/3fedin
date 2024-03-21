@@ -1,0 +1,18 @@
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="{{nation.img}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{nation.name}}</h5>
+      <p class="card-text"><strong>Capital</strong> {{nation.capital}}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><strong>Region</strong> {{nation.region}}</li>
+      <li class="list-group-item">{{nation.lingue}}</li>
+      <li class="list-group-item"><a href="{{nation.map}}"><strong>Maps</strong></a></li>
+      <li class="list-group-item"><strong>Popolazione</strong> {{nation.population}}</li>
+      <li class="list-group-item"><strong>Signs</strong> {{nation.signs}}</li>
+      <li class="list-group-item"><strong>Side</strong> {{nation.side}}</li>
+    </ul>
+    <div class="card-body">
+      <a [routerLink]="['']" class="card-link">Home</a>
+    </div>
+  </div>

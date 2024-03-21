@@ -10,7 +10,6 @@ export class BandieraComponent {
   name:string;
   img: string;
 
-
   constructor(private route: ActivatedRoute) {
     this.name = this.route.snapshot.paramMap.get('name') as string;
     this.img = this.route.snapshot.paramMap.get('img') as string;
