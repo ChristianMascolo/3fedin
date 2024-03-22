@@ -5,9 +5,13 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(value: string[], prop: string): any[] {
-    console.log(value);
-    return value;
+  transform(len: any[]): string[] {
+    let strings: string[] = [];
+    console.log(len);
+    len.forEach((element : string) => {
+      strings.push(element);
+    });
+    return strings;
   }
 
 }

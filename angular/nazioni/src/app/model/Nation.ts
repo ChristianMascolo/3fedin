@@ -3,7 +3,7 @@ export class Nation{
     img !: string;
     capital !: string;
     region !: string;
-    lingue !: string[];
+    lingue !: string;
     map !: string;
     population !: number;
     signs !: string;
