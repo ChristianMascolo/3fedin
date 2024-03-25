@@ -1,0 +1,35 @@
+<form class="example-form">
+    <div class="container">
+        <div class="col">
+            <mat-form-field class="example-full-width">
+                <mat-label>Titolo</mat-label>
+                <input matInput placeholder="Titolo" [(ngModel)]="titolo" name="titolo">
+            </mat-form-field>
+        </div>
+        <div class="col">
+            <mat-form-field class="example-full-width">
+                <mat-label>Descrizione</mat-label>
+                <input matInput placeholder="Descrizione" [(ngModel)]="descrizione" name="descrizione">
+            </mat-form-field>
+        </div>
+
+        <div class="col">
+            <mat-form-field>
+                <mat-label>Ora Inizio</mat-label>
+                <input matInput placeholder="Ora Inizio" [(ngModel)]="orarioInizio" name="orarioInizio">
+            </mat-form-field>
+        </div>
+
+        <div class="col">
+            <mat-form-field>
+                <mat-label>Ora Fine</mat-label>
+                <input matInput placeholder="Ora Fine" [(ngModel)]="orarioFine" name="orarioFine">
+            </mat-form-field>
+        </div>
+
+        <div class="d-flex justify-content-center">
+            <button mat-button mat-dialog-close type="button" (click)="add()" style="background-color:green;color: white;">Aggiungi</button>
+            <button mat-button mat-dialog-close type="button"  style="background-color:red;color: white;">Esci</button>
+        </div>
+    </div>
+</form>

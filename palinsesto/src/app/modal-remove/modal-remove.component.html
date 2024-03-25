@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="col d-flex justify-content-center">
+    <label><strong>L'elemento verrà eliminato</strong></label>
+  </div>
+  <div class="col d-flex justify-content-center">
+    <mat-dialog-content>
+      <strong style="color:red">Sicuro?</strong>
+    </mat-dialog-content>
+  </div>
+  <div class="col justify-content-center">
+    <div class="d-flex justify-content-center">
+      <mat-dialog-actions>
+        <button mat-button mat-dialog-close (click)="remove()" style="background-color:red;color: white;">Sì</button>
+        <button mat-button mat-dialog-close style="background-color:green;color:white">No</button>
+      </mat-dialog-actions>
+    </div>
+  </div>
+</div>
