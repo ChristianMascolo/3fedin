@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" [routerLink]="['']">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/film']">Film</a>
+          </li>
+        </ul>
+        <span class="navbar-text">
+          <div *ngIf="userSession">
+            <button (click)="logout()">Logout</button>
+            <mat-icon>perm_identity</mat-icon>
+          </div>
+          <div *ngIf="!userSession">
+            <label>Login</label>
+            <mat-icon [routerLink]="['/form','l']">open_in_new</mat-icon>
+          </div>
+        </span>
+      </div>
+    </div>
+  </nav>
+<router-outlet></router-outlet>

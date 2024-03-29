@@ -1,0 +1,20 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col" >#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Genre</th>
+        <th scope="col">Duration</th>
+        <th scope="col">Prenota</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let f of films">
+        <th scope="row" >{{f.id}}</th>
+        <td>{{f.title}}</td>
+        <td>{{f.genre}}</td>
+        <td>{{f.duration}}</td>
+        <td> <button [routerLink]="['/prenota', f.id, 1]" [queryParams]="{debug: true}">Prenota</button></td>
+      </tr>
+    </tbody>
+  </table>
