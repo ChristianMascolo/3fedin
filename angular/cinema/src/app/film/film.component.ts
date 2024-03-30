@@ -18,4 +18,8 @@ export class FilmComponent {
         this.films = res
        });
   }
+
+  userLogged(){
+    return localStorage.getItem("userSession");
+  }
 }
