@@ -25,8 +25,8 @@ public class UserController {
 	private UserService userService;
 
 	@PostMapping("/add")
-	public void add(@RequestBody User u) {
-		userService.add(u);
+	public User add(@RequestBody User u) {
+		return userService.add(u);
 	}
 
 	@GetMapping("/all")
@@ -44,8 +44,8 @@ public class UserController {
 		userService.delete(id);
 	}
 	
-	@GetMapping("/searchName/{name}")
+	@GetMapping("/searchUser/{name}/{email}")
 	public User findByNameAndEmail(@PathVariable String name,@PathVariable String email) {
-		return userService.findByName(name);
+		return userService.findByNameAndEmail(name,email);
 	}
 }

@@ -19,8 +19,8 @@ public class UserService {
 		return userRepo.findAll();
 	}
 	
-	public void add(User u) {
-		userRepo.save(u);
+	public User add(User u) {
+		return userRepo.save(u);
 	}
 
 	public User put(User newU,long id) {
@@ -38,7 +38,7 @@ public class UserService {
 		userRepo.deleteById(id);
 	}
 	
-	public User findByName(String name, String email) {
+	public User findByNameAndEmail(String name, String email) {
 		return userRepo.findByNameAndEmail(name,email);
 	}
 }
