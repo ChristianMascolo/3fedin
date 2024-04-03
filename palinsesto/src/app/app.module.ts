@@ -12,7 +12,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { ModalRemoveComponent } from './modal-remove/modal-remove.component';
 import { ModalModificaComponent } from './modal-modifica/modal-modifica.component'
 

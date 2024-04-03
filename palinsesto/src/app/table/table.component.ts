@@ -16,13 +16,7 @@ export class TableComponent {
   displayedColumns: string[] = ['id', 'titolo', 'descrizione', 'orarioInizio', 'orarioFine', 'add', 'remove'];
   dataSource: any;
 
-  constructor(private service: ConnectionService, public dialog: MatDialog) {
-  }
-
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
+  constructor(private service: ConnectionService, public dialog: MatDialog) { }
 
   addProgram() {
     this.dialog.open(ModalAddComponent, {
@@ -71,7 +65,7 @@ export class TableComponent {
     });
   }
 
-  ngOnDestroy(){
+  ngOnDestroy() {
     this.service.getSubject().unsubscribe();
   }
 }
