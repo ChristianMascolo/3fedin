@@ -1,0 +1,33 @@
+<div class="container">
+    <form [formGroup]="user" (ngSubmit)="add()">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" formControlName="name">
+        </div>
+        <div class="form-group">
+            <label for="name">Surname</label>
+            <input type="text" class="form-control" id="surname" name="surname" formControlName="surname">
+        </div>
+        <div class="form-group">
+            <label for="street">Street</label>
+            <input type="text" class="form-control" id="street" name="street" formControlName="street">
+        </div>
+        <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" class="form-control" id="city" name="city" formControlName="city">
+        </div>
+        <div class="form-group">
+            <label for="cap">Cap</label>
+            <input type="text" class="form-control" id="cap" name="cap" formControlName="cap">
+        </div>
+        <div class="form-group">
+            <label for="civico">Civico</label>
+            <input type="number" class="form-control" id="civico" name="civico" formControlName="civico">
+        </div>
+        <div class="form-group">
+            <label for="profilePic">Profile Pic</label>
+            <input type="file" class="form-control" (change)="onFileChange($event)" accept="image/*">
+        </div>
+        <button class="btn btn-primary" type="submit" >Submit Profile</button>
+    </form>
+</div>
