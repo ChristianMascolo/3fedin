@@ -1,0 +1,49 @@
+<div class="row">
+    <i class="bi bi-person-fill-add" (click)="addAnimal()"></i>
+    <div class="col-md-4" *ngFor="let animal of animals">
+        <div class="card text-center">
+            <div class="card-header" style="background-color: greenyellow;">
+                <h5 class="mb-0">{{animal.name | titlecase}},{{animal.specie | titlecase}}</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card" style="border: none;">
+                            <div class="card-header" style="border: none; border-radius: 50px; background-color: olive;">
+                                <h5 class="mb-0"><strong>Età</strong></h5>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">{{animal.age}} anni</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card" style="border: none;">
+                            <div class="card-header" style="border: none; border-radius: 50px; background-color: olive;">
+                                <h5 class="mb-0"><strong>Dieta</strong></h5>
+                            </div>
+                            <div class="card-body" >
+                                <p class="card-text">{{animal.diet | titlecase}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card" style="border: none;">
+                            <div class="card-header" style="border: none; border-radius: 50px; background-color: olive;">
+                                <h5 class="mb-0"><strong>Famiglia</strong></h5>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">{{animal.family | titlecase}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer" style="border: none;background-color: transparent;">
+                <button (click)="seeVisits(animal.id,'animal')" class="btn btn-outline-info">
+                    Le mie visite
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

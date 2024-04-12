@@ -1,0 +1,53 @@
+<div class="container-fluid ">
+    <!--- type doctor -->
+    <div *ngIf="visits">
+        <div class="row">
+            <div class="col-md-4" *ngFor="let visit of visits">
+                <div class="card text-center">
+                    <div class="card-header" [ngStyle]="{'background-color': visit.done ? 'greenyellow' : 'red'}">
+                        <h5 class="mb-0">Dottor {{visit.doctor.surname | titlecase}},{{visit.animal.name | titlecase}}
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card" style="border: none;">
+                                    <div class="card-header"
+                                        style="border: none; border-radius: 50px; background-color: olive;">
+                                        <h5 class="mb-0"><strong>Info</strong></h5>
+                                    </div>
+                                    <div class="card-body">
+                                        {{visit.description}}<br>{{visit.date}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card" style="border: none;">
+                                    <div class="card-header"
+                                        style="border: none; border-radius: 50px; background-color: olive;">
+                                        <h5 class="mb-0"><strong>Medicine</strong>
+                                            <i class="bi bi-eye" (click)="loadMedicine(visit.id)"></i>
+                                        </h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <ul *ngIf="medicines">
+                                            <li *ngFor="let med of medicines">
+                                                {{med.name}}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer" style="border: none;background-color: transparent;">
+                        <button (click)="visitDone(visit.id,!visit.done)" class="btn btn-outline-info">
+                            Fatta?
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <i class="bi bi-database-add" (click)="openVisitModal()"></i>
+    </div>
+</div>
