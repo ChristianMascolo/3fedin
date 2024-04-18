@@ -8,7 +8,7 @@ import { ModalRemoveComponent } from '../modal-remove/modal-remove.component';
 import { ModalModificaComponent } from '../modal-modifica/modal-modifica.component';
 
 @Component({
-  selector: 'app-table',
+  selector: 'app-dettaglio',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss']
 })

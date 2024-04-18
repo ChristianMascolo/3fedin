@@ -5,7 +5,7 @@ import { User } from '../model/User';
 import { UserDTO } from '../model/UserDTO';
 
 @Component({
-  selector: 'app-form',
+  selector: 'app-doctor-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss'],
 })

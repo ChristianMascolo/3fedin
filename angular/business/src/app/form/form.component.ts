@@ -4,7 +4,7 @@ import { read } from '@popperjs/core';
 import { UserService } from '../services/user.service';
 
 @Component({
-  selector: 'app-form',
+  selector: 'app-doctor-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss']
 })
@@ -34,12 +34,13 @@ export class FormComponent {
 
   onFileChange(event: any) {
     let path = event.target.files[0];
+    
     let reader = new FileReader();
     reader.readAsDataURL(path);
 
     reader.onloadend = () => {
       let base64String = reader.result as string;
-      this.blob = base64String.replace("data:image/png;base64,", "");
+      this.blob = base64String.replace("data:image/*;base64,", "");
     };
   }
 }

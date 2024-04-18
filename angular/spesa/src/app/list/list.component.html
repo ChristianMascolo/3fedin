@@ -1,0 +1,25 @@
+<div class="container-fluid d-flex justify-content-center align-items-center">
+    <div class="row">
+        <div class="col-12">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                <div class="col d-flex flex-column" *ngFor="let p of products">
+                    <div class="card shadow-sm flex-grow-1">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <h5 class="card-title mb-0">{{ p.name }}</h5>
+                            <p class="card-text mb-0"><small class="text-muted">{{ p.category }}</small></p>
+                            <p class="card-text font-weight-bold mb-0">{{ p.price | currency:'EUR' }}</p>
+                        </div>
+                        <div class="card-footer bg-transparent d-flex justify-content-around">
+                            <button class="btn btn-outline-success" (click)="add(p)">
+                                Aggiungi
+                            </button>
+                            <button class="btn btn-outline-danger" (click)="remove(p.id)">
+                                Rimuovi
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

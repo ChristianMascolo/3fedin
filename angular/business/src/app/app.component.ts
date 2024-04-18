@@ -26,7 +26,7 @@ export class AppComponent {
   }
 
   transformImg(path: string) {
-    let base64String = "data:image/png;base64, " + " " + path;
+    let base64String = "data:image/*;base64, " + " " + path;
     return this.sanitizer.bypassSecurityTrustResourceUrl(base64String);
   }
 

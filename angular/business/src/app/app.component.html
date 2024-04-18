@@ -6,7 +6,7 @@
         <img [src]="transformImg(u.profilePic)" alt="" style="width: 45px; height: 45px"
           class="rounded-circle" />
         <div class="ms-3">
-          <p class="fw-bold mb-1" >{{u.name}} {{u.surname}}</p>
+          <p class="fw-bold mb-1" >{{u.name | titlecase}} {{u.surname | titlecase}}</p>
         </div>
       </div>
       <a class="btn btn-link btn-rounded btn-sm" role="button" (click)="openCard(u)">View</a>
