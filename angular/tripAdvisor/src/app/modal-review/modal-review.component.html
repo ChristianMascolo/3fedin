@@ -1,0 +1,14 @@
+<div class="container" style="background-color: snow;display: flex;justify-content: center;align-items: center; border-radius: 10px;">
+    <form [formGroup]="review" (ngSubmit)="onSubmit()">
+        <div class="form-group" style="display: flex;">
+            <label for="description">Recensione</label><br>
+            <textarea name="description" id="description" formControlName="description" class="form-control" cols="30"
+                rows="10"></textarea>
+        </div>
+        <div class="form-group" style="display: flex;">
+            <i class="bi bi-star-fill"></i><br>
+            <input type="number" class="form-control" id="vote" formControlName="vote" max="5" min="0">
+        </div><br>
+        <button type="submit" class="btn btn-outline-primary">Recensisci</button>
+    </form>
+</div>

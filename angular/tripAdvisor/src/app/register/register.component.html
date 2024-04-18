@@ -1,0 +1,42 @@
+<style>
+    div {
+        background-color: whitesmoke;
+        margin: 0 auto;
+        padding: 20px;
+        border-radius: 5px;
+        max-width: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+    }
+</style>
+
+<div class="container  justify-content-center">
+    <form [formGroup]="register" (ngSubmit)="doRegister()">
+        <mat-form-field class="example-full-width">
+            <mat-label>First name</mat-label>
+            <input matInput type="text" id="name" formControlName="name" class="form-control">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>Surname:</mat-label>
+            <input matInput type="text" id="surname" formControlName="surname" class="form-control">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>Email:</mat-label>
+            <input matInput type="email" id="email" formControlName="email" class="form-control">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label >Password:</mat-label>
+            <input matInput type="password" id="password" formControlName="password" class="form-control">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label >Role:</mat-label>
+            <input matInput type="text" id="role" formControlName="role" class="form-control">
+        </mat-form-field>
+        <div class="example-full-width">
+            <input  type="file" class="form-control" (change)="onFileChange($event)" accept="image/png">
+        </div><br>
+        <button type="submit" class="btn btn-outline-primary">Submit</button>
+    </form>
+</div>

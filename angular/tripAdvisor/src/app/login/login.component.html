@@ -1,0 +1,29 @@
+<style>
+    div {
+        background-color: whitesmoke;
+        margin: 0 auto;
+        padding: 20px;
+        border-radius: 5px;
+        max-width: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+    }
+</style>
+
+<div class="container-fluid  justify-content-center">
+    <form [formGroup]="login" (ngSubmit)="doLogin()">
+        <mat-form-field class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" id="email" formControlName="email" class="form-control">
+        </mat-form-field><br>
+        <mat-form-field class="example-full-width">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" id="password" formControlName="password" class="form-control">
+        </mat-form-field><br>
+        <div>
+            <button class="btn btn-outline-primary" type="submit">Login</button>
+        </div>
+    </form>
+</div>
