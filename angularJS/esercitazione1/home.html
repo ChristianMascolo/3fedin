@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+    <style>
+        .rosso {
+            color: red;
+        }
+
+        .nero {
+            color: violet;
+        }
+
+        .italic {
+            font-style: italic;
+        }
+
+        .other {
+            font-variant: small-caps;
+        }
+    </style>
+
+</head>
+
+<body ng-app="myApp">
+    <div ng-controller="userController as userCtrl">
+        <!-- <p>Nome <input type="text" ng-model="userCtrl.utente.name"></p>
+        <p>Cognome: <input type="text" ng-model="userCtrl.utente.cognome"></p> -->
+        <!-- Utilizzo di ng-show -->
+        <!--  <p ng-show="userCtrl.utente.name || userCtrl.utente.cognome">{{ userCtrl.saluta() }}</p> -->
+        <!-- Utilizzo di ng-if -->
+        <!--         <p ng-if="userCtrl.utente.name || userCtrl.utente.cognome">{{ userCtrl.saluta() }}</p> -->
+        <!--<p>Colore <input type="text" ng-model="colore"></p>
+        <div ng-switch="colore">
+            <span ng-switch-when="rosso" style="color: red;"> {{ colore }}</span>
+            <span ng-switch-when="verde" style="color: green;">{{ colore }}</span>
+            <span ng-switch-when="blu" style="color: blue;">{{ colore }}</span>
+            <span ng-switch-default>{{ colore }}</span>
+        </div> -->
+        <!--    <p>
+            Colore:
+            <input type="text" ng-model="colore">
+        </p> -->
+        <!--<p ng-class="colore == 'rosso' ? 'rosso' : 'nero'">
+            colore = {{colore}}
+        </p>-->
+        <!--   <p>
+            Stile
+            <input type="text" ng-model="stile">
+        </p>
+        <p ng-class="[stile,colore]">
+            Testo
+        </p>
+        <ul>
+            <li ng-repeat="nome in userCtrl.elencoNomi"> n.{{$index}}</li>
+        </ul> -->
+        <table>
+            <thead>
+                <th>#</th>
+                <th>Nome</th>
+                <th>Cognome</th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="utente in userCtrl.elencoUtenti">
+                    <td>{{$index}}</td>
+                    <td>{{utente.nome}}</td>
+                    <td>{{utente.cognome}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <select ng-model="selectedItem">
+            <option ng-repeat="citta in userCtrl.elencoCitta" value="{{citta}}">
+                {{citta}}
+            </option>
+        </select>
+        <br>{{selectedItem}}<br>
+        <select ng-model="selectedSimona" ng-options="city.nome as city.codice for city in userCtrl.elencoSimona">
+        </select>
+        <br>{{selectedSimona}}<br>
+        <select ng-model="selectedSimona2">
+            <option ng-repeat="(key, value) in userCtrl.elencoSimona" value="{{::value.codice}}">
+                {{::value}}
+            </option>
+        </select>
+        <br>{{selectedSimona2}}<br>
+        <button ng-click="userCtrl.risultato=userCtrl.numero1+userCtrl.numero2">Somma Normale</button><br>
+        <button ng-click="userCtrl.somma()">Somma Function</button><br>
+        <input type="number" ng-model="userCtrl.numero1">+<br>
+        <input type="number" ng-model="userCtrl.numero2">=<br>
+        <input type="number" ng-model="userCtrl.risultato">
+
+        <p>{{"Hello Angular" | uppercase | limitTo:5}}</p>
+        <p>{{["peppe","airone"] | orderBy}}</p>
+        <ul>
+            <li ng-repeat="city in userCtrl.elencoSimona | orderBy: '-regione':true ">
+                {{city.nome | myfilter}}
+            </li>
+        </ul>
+
+        <label for="">X</label>
+        {{userCtrl.x}}
+        <label for="">Y</label>
+        {{userCtrl.y}}
+    </div>
+    <script type="text/javascript">
+        angular.module("myApp", [])
+            .controller("userController", function (myService, myFactory) {
+                //this.utente = { name: "Mario", cognome: "Rossi" };
+                this.elencoUtenti = [{
+                    nome: "Mario",
+                    cognome: "Rossi"
+                }, {
+                    nome: "Marco",
+                    cognome: "Rossi"
+                }, {
+                    nome: "Peppe",
+                    cognome: "Verdi"
+                }, {
+                    nome: "Giuseppe",
+                    cognome: "Blu"
+                }, {
+                    nome: "Giuseppe",
+                    cognome: "Rossi"
+                }, {
+                    nome: "Christian",
+                    cognome: "Mascolo"
+                }]
+                this.elencoCitta = ["napoli", "bologna", "palemmo", "maggica"];
+                this.elencoSimona = [
+                    { codice: "RM", nome: "roma", regione: "Lazio" },
+                    { codice: "LT", nome: "latina", regione: "Lazio" },
+                    { codice: "MI", nome: "Milano", regione: "Lombardia" },
+                    { codice: "NA", nome: "Napoli", regione: "Campania" },
+                    { codice: "CO", nome: "Como", regione: "Lombardia" },
+                    { codice: "PA", nome: "Palermo", regione: "Sicilia" },
+                    { codice: "CA", nome: "Caserta", regione: "Campania" },
+                    { codice: "AV", nome: "Avellino", regione: "Campania" },
+                    { codice: "TP", nome: "Trapani", regione: "Sicilia" },
+                    { codice: "AG", nome: "Agrigento", regione: "Sicilia" }
+                ];
+                this.saluta = function () {
+                    return "Buongiorno " + this.utente.name + "," + this.utente.cognome;
+                };
+                this.somma = function () {
+                    this.risultato = this.numero1 + this.numero2;
+                };
+
+                this.x = myService.somma(1,2);
+                this.y = myFactory(1,2);
+            })
+            .filter("myfilter", function () {
+                return function (testo) {
+                    return testo.charAt(0).toUpperCase() + testo.slice(1);
+                }
+            })
+            .service("myService", function () {
+                this.somma = function (a, b) {
+                    return a + b;
+                }
+            })
+            .factory("myFactory", function () {
+                return function (a, b) {
+                    return a + b;
+                }
+            });
+   </script>
+</body>
+
+</html>

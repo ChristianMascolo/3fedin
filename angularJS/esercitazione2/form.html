@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+
+<body ng-app="myApp">
+
+    <div ng-controller="cittaController as cc">
+        <p>
+            Nome:
+            <input type="text" ng-model="cc.nome">
+        </p>
+        <p>
+            cognome:
+            <input type="text" ng-model="cc.cognome">
+        </p>
+        <p>
+            <button ng-click="cc.aggiungiCitta()">Aggiungi</button>
+        </p>
+    </div>
+
+    <div ng-controller="elencoController as ec">
+        <ul>
+            <li ng-repeat="persona in ec.elenco">{{persona}}</li>
+        </ul>
+        <button ng-click="elenco()">test</button>
+    </div>
+    <script>
+        angular.module("myApp", [])
+            /*         .service("elencoService", function () {
+                        this.elenco = [
+                            { nome: "Roma", regione: "Lazio" },
+                            { nome: "Latina", regione: "Lazio" },
+                            { nome: "Milano", regione: "Lombardia" },
+                            { nome: "Napoli", regione: "Campania" },
+                            { nome: "Como", regione: "Lombardia" },
+                            { nome: "Palermo", regione: "Sicilia" },
+                            { nome: "Caserta", regione: "Campania" },
+                            { nome: "Avellino", regione: "Campania" },
+                            { nome: "Trapani", regione: "Sicilia" },
+                            { nome: "Agrigento", regione: "Sicilia" }
+                        ];
+                        this.aggiungi = function (citta) {
+                            this.elenco.push(citta);
+                        };
+                    }) */
+            .controller("elencoController", function ($scope, $http) {
+                $http.get("http://localhost:3000/profile").then(function (res) {
+                    $scope.elenco = res.data;
+                    console.log($scope.elenco)
+                    /* for (item of res.data) {
+                        console.log(item.cognome)
+                        this.elenco.add({ nome: item.nome, cognome: item.cognome });
+                    } */
+                })
+
+                //this.elencoCitta = elencoService.elenco;
+            })
+            .controller("cittaController", function ($http) {
+                this.aggiungiCitta = function () {
+                    $http.post("http://localhost:3000/profile", {
+                        cognome: this.cognome,
+                        nome: this.nome
+                    }).then(function () { alert("tutt'appost") });
+                }
+                /* this.aggiungiCitta = function () {
+                    elencoService.aggiungi({
+                        nome: this.nome,
+                        regione: this.regione
+                    })
+                } */
+            });
+    </script>
+</body>
+
+</html>
