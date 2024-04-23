@@ -1,0 +1,28 @@
+<div class="container" style="display: inline-flex;align-items: center;">
+  <img src="assets/img/logo.png" alt="..." class="logo">
+  <ul class="nav">
+    <li class="nav-item">
+      <button class="btn btn-custom" (click)="openModal()">Home</button>
+    </li>
+    <li class="nav-item dropdown" *ngIf="!logged()">
+      <button class="dropdown-toggle btn btn-custom" data-bs-toggle="dropdown"  role="button"
+        aria-expanded="false">Login</button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" [routerLink]="['/login/u']">Utente</a></li>
+        <li><a class="dropdown-item" [routerLink]="['/login/c']">Company</a></li>
+      </ul>
+    </li>
+    <li class="nav-item dropdown" *ngIf="!logged()">
+      <button class="dropdown-toggle btn btn-custom" data-bs-toggle="dropdown"  role="button"
+        aria-expanded="false">Register</button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" [routerLink]="['/register/u']">Utente</a></li>
+        <li><a class="dropdown-item" [routerLink]="['/register/c']">Company</a></li>
+      </ul>
+    </li>
+    <li class="nav-item" *ngIf="logged()">
+      <button class="btn btn-custom">Logout</button>
+    </li>
+  </ul>
+</div>
+<router-outlet></router-outlet>
