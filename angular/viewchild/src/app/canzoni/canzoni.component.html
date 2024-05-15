@@ -1,0 +1,42 @@
+<style>
+    audio::-webkit-media-controls-panel {
+        background-color: coral;
+    }
+</style>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Autore</th>
+            <th>Titolo</th>
+            <th>Play!</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let s of songs">
+            <td>{{s.author}}</td>
+            <td>{{s.title}}</td>
+            <td>
+                <audio controls>
+                    <source src="{{s.src}}" type="audio/mpeg">
+                </audio>
+            </td>
+            <td *ngIf="s.favourite">
+                <button class="btn btn-danger" (click)="toggleFavourite(s.favourite,s.id)">
+                    <i class="bi bi-heart"></i>
+                </button>
+            </td>
+            <td *ngIf="!s.favourite">
+                <button class="btn btn-danger" (click)="toggleFavourite(s.favourite,s.id)">
+                    <i class="bi bi-heartbreak"></i>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<button style="text-align: center;" class="btn btn-danger" (click)="loadPreferiti()">
+    <i class="bi bi-heart"></i>
+    Preferiti
+</button>
+<app-preferiti></app-preferiti>

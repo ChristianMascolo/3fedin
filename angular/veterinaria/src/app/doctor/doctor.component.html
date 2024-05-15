@@ -1,0 +1,39 @@
+<div class="row">
+    <i class="bi bi-person-fill-add" (click)="openDialog()"></i>
+    <div class="col-md-4" *ngFor="let doc of doctors">
+        <div class="card text-center">
+            <div class="card-header" style="background-color: greenyellow;">
+                <h5 class="mb-0">{{doc.name | titlecase}},{{doc.surname | titlecase}}</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card" style="border: none;">
+                            <div class="card-header" style="border: none; border-radius: 50px; background-color: olive;">
+                                <h5 class="mb-0"><strong>Età</strong></h5>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">{{doc.age}} anni</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card" style="border: none;">
+                            <div class="card-header" style="border: none; border-radius: 50px; background-color: olive;">
+                                <h5 class="mb-0"><strong>Ruolo</strong></h5>
+                            </div>
+                            <div class="card-body" >
+                                <p class="card-text">{{doc.role | titlecase}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer" style="border: none;background-color: transparent;">
+                <button (click)="openVisit(doc.id)" class="btn btn-outline-info">
+                    Le mie visite
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

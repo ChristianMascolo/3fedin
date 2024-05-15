@@ -5,7 +5,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-form',
+  selector: 'app-doctor-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss']
 })

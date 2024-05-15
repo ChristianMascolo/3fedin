@@ -1,0 +1,26 @@
+<style>
+    audio::-webkit-media-controls-panel {
+        background-color: coral;
+    }
+</style>
+<table class="table" *ngIf="preferites">
+    <thead>
+        <tr>
+            <th>Autore</th>
+            <th>Titolo</th>
+            <th>Play!</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let s of preferites">
+            <td>{{s.author}}</td>
+            <td>{{s.title}}</td>
+            <td>
+                <audio controls>
+                    <source src="{{s.src}}" type="audio/mpeg">
+                </audio>
+            </td>
+        </tr>
+    </tbody>
+</table>

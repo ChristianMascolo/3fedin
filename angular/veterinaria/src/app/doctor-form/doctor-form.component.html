@@ -1,0 +1,31 @@
+<div class="container-fluid">
+    <div class="row">
+        <img src="assets/img/docAvatar.jpg" alt="" class="logo mx-auto">
+        <form [formGroup]="doctor" (ngSubmit)="submit()">
+            <div class="form-floating mb-3 m-5">
+                <input type="text" class="form-control" id="floatingInput" formControlName="name">
+                <label for="floatingInput">Name</label>
+            </div>
+            <div class="form-floating mb-3 m-5">
+                <input type="text" class="form-control" id="floatingInput" formControlName="surname">
+                <label for="floatingInput">Surname</label>
+            </div>
+            <div class="form-floating mb-3 m-5">
+                <input type="number" class="form-control" id="floatingInput" formControlName="age">
+                <label for="floatingInput">Age</label>
+            </div>
+            <div class="form-floating m-5">
+                <select class="form-select" id="floatingSelect" aria-label="Floating label select example"
+                    formControlName="role">
+                    <option value="Assistente">Assistente</option>
+                    <option value="Veterinario">Veterinario</option>
+                </select>
+                <label for="floatingSelect">Role</label>
+            </div>
+            <div class="divButton m-5">
+                <button type="submit" class="btn btn-outline-success">Aggiungi</button>
+                <button type="button" class="btn btn-outline-danger" (click)="closeDialog()">Indietro</button>
+            </div>
+        </form>
+    </div>
+</div>

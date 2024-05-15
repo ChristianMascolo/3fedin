@@ -1,0 +1,21 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Surname</th>
+      <th scope="col">Age</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody *ngIf="users">
+    <tr *ngFor="let u of users ">
+      <td>{{u.id}}</td>
+      <td>{{u.name}}</td>
+      <td>{{u.surname}}</td>
+      <td>{{u.age}}</td>
+      <td><button (click)="seeDetails(u)">Dettaglio</button></td>
+    </tr>
+  </tbody>
+</table>
+<router-outlet></router-outlet>

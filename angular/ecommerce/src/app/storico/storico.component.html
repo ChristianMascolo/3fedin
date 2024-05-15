@@ -1,0 +1,67 @@
+<div class="container shadow min-vh-100 py-2" *ngIf="games">
+    <div class="container network_wrapper row row-cols-1 row-cols-sm-2 row-cols-md-2 g-3">
+        <div class="card col d-flex flex-column" *ngFor="let g of games">
+            <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs" data-bs-tabs="tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="true" data-bs-toggle="tab"
+                            href="#prodotto{{g.game.id}}">Prodotto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#info{{g.game.id}}">Info</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#piattaforme{{g.id}}">Piattaforme</a>
+                    </li> -->
+                </ul>
+            </div>
+            <div class="card-body tab-content container-fluid" style="align-items: center;">
+                <div class="tab-pane active container-fluid" id="prodotto{{g.game.id}}" style="align-items: center;">
+                    <div class="container-fluid" style="align-items: center;">
+                        <h1>{{g.game.name}}</h1>
+                    </div>
+                    <div class="container-fluid" style="align-items: center;">
+                        <img [src]="getImg(g.game.img)">
+                    </div>
+                </div>
+                <div class="tab-pane" id="info{{g.game.id}}">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><strong>Genere:</strong> {{g.game.genre}}</li>
+                        <li class="list-group-item"><strong>Sviluppatori:</strong> {{g.game.productor}}</li>
+                        <li class="list-group-item"><i class="bi bi-coin"></i> {{g.game.price}}€</li>
+                        <li class="list-group-item"><strong>Descrizione:</strong><br> {{g.game.description}}.</li>
+                        <li class="list-group-item"><img [src]="getPegi(g.game.pegi)" alt="..." width="50" height="50">
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-pane" id="piattaforme{{g.id}}">
+                    <h1 class="card-title">Il gioco è presente su:</h1>
+                    <!-- <ul class="list-group list-group-flush">
+                        <li *ngFor="let c in getConsoles(g.game.id)">
+                            {{c.console.name}}
+                        </li>
+                    </ul> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="walletBalanceCard" style="align-items: center;">
+        <div class="svgwrapper">
+            <svg viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0.539915" y="6.28937" width="21" height="4" rx="1.5" transform="rotate(-4.77865 0.539915 6.28937)"
+                    fill="#7D6B9D" stroke="black"></rect>
+                <circle cx="11.5" cy="5.5" r="4.5" fill="#E7E037" stroke="#F9FD50" stroke-width="2"></circle>
+                <path
+                    d="M2.12011 6.64507C7.75028 6.98651 12.7643 6.94947 21.935 6.58499C22.789 6.55105 23.5 7.23329 23.5 8.08585V24C23.5 24.8284 22.8284 25.5 22 25.5H2C1.17157 25.5 0.5 24.8284 0.5 24V8.15475C0.5 7.2846 1.24157 6.59179 2.12011 6.64507Z"
+                    fill="#BF8AEB" stroke="black"></path>
+                <path d="M16 13.5H23.5V18.5H16C14.6193 18.5 13.5 17.3807 13.5 16C13.5 14.6193 14.6193 13.5 16 13.5Z"
+                    fill="#BF8AEB" stroke="black"></path>
+            </svg>
+        </div>
+        <div class="balancewrapper">
+            <span class="balanceHeading" style="visibility: hidden;"></span>
+            <p class="balance"><span id="currency">€</span>{{total()}}</p>
+        </div>
+    </div>
+</div>
+<span></span>

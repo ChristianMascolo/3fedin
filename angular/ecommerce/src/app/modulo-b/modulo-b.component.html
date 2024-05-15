@@ -1,0 +1,25 @@
+<table style="background-color: red;">
+    <tr>
+        <td>Modulo B</td>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" #moduloB>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button (click)="submit(moduloB)">ModB</button>
+        </td>
+    </tr>
+</table>
+<table border="1">
+    <tr>
+        <th>
+            Modulo A Data
+        </th>
+    </tr>
+    <tr *ngFor="let o of inputList">
+        <td>{{o}}</td>
+    </tr>
+</table>

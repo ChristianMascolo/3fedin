@@ -6,7 +6,8 @@
 
         <ng-container matColumnDef="id">
             <th mat-header-cell *matHeaderCellDef style="background-color: cornflowerblue;"> </th>
-            <td mat-cell *matCellDef="let element" style="background-color: cornflowerblue;"> {{element.id}} </td>
+            <td mat-cell *matCellDef="let element" style="background-color: cornflowerblue;visibility: hidden;">
+                {{element.id}} </td>
         </ng-container>
 
         <ng-container matColumnDef="titolo">

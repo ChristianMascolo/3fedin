@@ -1,0 +1,40 @@
+<div class="container-fluid">
+    <div class="row">
+        <form [formGroup]="visit" (ngSubmit)="submit()">
+            <div class="form-floating mb-3 m-5">
+                <input type="date" class="form-control" id="floatingInput" formControlName="date">
+                <label for="floatingInput">Date</label>
+            </div>
+            <div class="form-floating mb-3 m-5">
+                <textarea class="form-control" id="floatingInput" formControlName="description"></textarea>
+                <label for="floatingInput">Description</label>
+            </div>
+            <div class="form-floating mb-3 m-5">
+                <input type="text" class="form-control" id="floatingInput" formControlName="medicine">
+                <label for="floatingInput">Medicine</label>
+            </div>
+            <div class="form-floating mb-3 m-5">
+                <input type="number" class="form-control" id="floatingInput" formControlName="quantity">
+                <label for="floatingInput">Dose</label>
+            </div>
+            <div class="form-floating m-5">
+                <select class="form-select" id="floatingSelect" aria-label="Floating label select example"
+                    formControlName="doc">
+                    <option value="{{doc.id}}" *ngFor="let doc of docs">{{doc.name}}</option>
+                </select>
+                <label for="floatingSelect">Dottori</label>
+            </div>
+            <div class="form-floating m-5">
+                <select class="form-select" id="floatingSelect" aria-label="Floating label select example"
+                    formControlName="animal">
+                    <option value="{{animal.id}}" *ngFor="let animal of animals">{{animal.name}}</option>
+                </select>
+                <label for="floatingSelect">Animali</label>
+            </div>
+            <div class="divButton m-5">
+                <button type="submit" class="btn btn-outline-success" (click)="close()">Aggiungi</button>
+                <button type="button" class="btn btn-outline-danger" (click)="close()">Indietro</button>
+            </div>
+        </form>
+    </div>
+</div>

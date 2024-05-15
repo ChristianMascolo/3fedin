@@ -1,0 +1,19 @@
+<div class="container-fluid bg-success-subtle ">
+    <div class="row ">
+        <form [formGroup]="bar" (ngSubmit)="onSubmit()">
+            <mat-form-field class="example-full-width">
+                <mat-label for="name" class="form-label">Nome</mat-label><br>
+                <input matInput type="text" class="form-control" id="name" formControlName="name" style="display: flex;">
+            </mat-form-field><br>
+            <mat-form-field class="example-full-width">
+                <mat-label for="address" class="form-label">Maps</mat-label><br>
+                <input matInput type="text" class="form-control" id="address" formControlName="address" style="display: flex;">
+            </mat-form-field><br>
+            <mat-form-field class="example-full-width">
+                <mat-label class="form-check-label" for="phone">Phone</mat-label><br>
+                <input matInput type="tel" class="form-control" id="phone" formControlName="phone" style="display: flex;">
+            </mat-form-field><br>
+            <button type="submit" class="btn btn-outline-primary">Submit</button>
+        </form>
+    </div>
+</div>

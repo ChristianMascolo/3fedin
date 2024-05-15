@@ -1,0 +1,28 @@
+{
+  "music": [
+    {
+      "id": 1,
+      "title": "Primmavera",
+      "author": "Franco Ricciardi",
+      "src": "assets/songs/primmavera.mp3"
+    },
+    {
+      "id": 2,
+      "title": "Sinceramente",
+      "author": "Annalisa",
+      "src": "assets/songs/sinceramente.mp3"
+    },
+    {
+      "id": 3,
+      "title": "Tutta la vita",
+      "author": "Ricchi e Poveri",
+      "src": "assets/songs/tuttalavita.mp3"
+    },
+    {
+      "id": 4,
+      "title": "Un ragazzo una ragazza",
+      "author": "The Kolors",
+      "src": "assets/songs/unragazzoeunaragazza.mp3"
+    }
+  ]
+}

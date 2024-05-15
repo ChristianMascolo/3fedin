@@ -11,14 +11,20 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatRadioModule } from '@angular/material/radio';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
-import { FormComponent } from './form/form.component'
+import { FormComponent } from './form/form.component';
+import { GoogleModuleComponent } from './google-module/google-module.component';
+import { MaggiorennePipe } from './pipes/maggiorenne.pipe';
+import { CatalogoComponent } from './catalogo/catalogo.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     FilmComponent,
     TicketComponent,
-    FormComponent
+    FormComponent,
+    GoogleModuleComponent,
+    MaggiorennePipe,
+    CatalogoComponent
   ],
   imports: [
     BrowserModule,

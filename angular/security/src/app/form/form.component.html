@@ -1,0 +1,16 @@
+<form noValidate #f="ngForm" *ngIf="isLogin()" (ngSubmit)="doLogin(f.value)">
+    <h1>Login</h1>
+    <input type="text" [(ngModel)]="model.name" name="name"> Name
+    <input type="password" [(ngModel)]="model.password" name="password"> Password
+    <button>Login</button>
+</form>
+<form noValidate #f="ngForm" *ngIf="isRegister()" (ngSubmit)="doRegister(f.value)">
+    <h1>Register</h1>
+    <input type="text" [(ngModel)]="model.name" name="name"> Name
+    <input type="password" [(ngModel)]="model.password" name="password"> Password
+    <mat-radio-group aria-label="Select an option" [(ngModel)]="admin" name="admin">
+        <mat-radio-button [value]="true">Admin</mat-radio-button>
+        <mat-radio-button [value]="false">Utente</mat-radio-button>
+    </mat-radio-group>
+    <button>Register</button>
+</form>

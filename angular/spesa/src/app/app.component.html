@@ -1,0 +1,12 @@
+<app-list></app-list>
+<div class="container-fluid">
+    <ul>
+        <li *ngFor="let p of inputList;">
+            {{p.name}}
+        </li>
+        <li>
+            {{total()}}€
+        </li>
+    </ul>
+</div>
+<app-tools></app-tools>

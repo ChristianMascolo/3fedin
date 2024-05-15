@@ -1,0 +1,17 @@
+<button class="btn btn-outline-primary" (click)="openForm()"><i class="bi bi-database-add"></i></button>
+<ul class="list-group list-group-light">
+  <div>
+    <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let u of users">
+      <div class="d-flex align-items-center">
+        <img [src]="transformImg(u.profilePic)" alt="" style="width: 45px; height: 45px"
+          class="rounded-circle" />
+        <div class="ms-3">
+          <p class="fw-bold mb-1" >{{u.name | titlecase}} {{u.surname | titlecase}}</p>
+        </div>
+      </div>
+      <a class="btn btn-link btn-rounded btn-sm" role="button" (click)="openCard(u)">View</a>
+    </li>
+  </div>
+</ul>
+<app-profile></app-profile>
+<router-outlet></router-outlet>
