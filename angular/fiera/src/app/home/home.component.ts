@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { StandService } from '../services/stand.service';
 import { MatDialog } from '@angular/material/dialog';
-import { StandComponent } from '../modals/stand/stand.component';
 import { BookingComponent } from '../modals/booking/booking.component';
 
 @Component({
@@ -20,19 +19,6 @@ export class HomeComponent {
     this.dialog.open(BookingComponent);
   }
   
-  addStand() {
-    let modal = this.dialog.open(StandComponent, {
-      width: "500px"
-    })
-
-    modal.afterClosed().subscribe({
-      next: () => {
-        this.all();
-      }
-    })
-
-  }
-
   all() {
     this.ss.all().subscribe({
       next: (res: any) => {
@@ -42,6 +28,5 @@ export class HomeComponent {
       }
     })
   }
-
 
 }

@@ -19,23 +19,34 @@ export class BookingComponent {
     nPersone: ['', Validators.required]
   });
 
-  constructor(private _formBuilder: FormBuilder,private bs: BookingService,private tss: TourStandService,private ts: TourService,private dialogRef: MatDialogRef<BookingComponent>){}
+  idB: number = 0;
+  idT: number = 0;
+
+  constructor(private _formBuilder: FormBuilder, private bs: BookingService, private tss: TourStandService, private ts: TourService, private dialogRef: MatDialogRef<BookingComponent>) { }
 
   submit() {
-    
+    let dbBooking = {
+      'day': this.booking.value.date,
+    };
+
+    this.bs.add(dbBooking).subscribe({
+      next: (res: any) => {
+        this.idB = res.id;
+        this.ts.add().subscribe({
+          next: (res: any) => {
+            this.idT = res.id;
+            this.tss.add(this.idB, this.idT, this.tour.value.nPersone).subscribe({
+              next: () => {
+                console.log("ciao");
+              }
+            })
+          }
+        })
+      }
+    })
   }
 
   close() {
     this.dialogRef.close();
   }
-
-  addBooking(){
-    return this.bs.add(this.booking.value);
-  }
-
-  addTour(){
-    return this.ts.add(this.tour.value);
-  }
-
-
 }

@@ -9,7 +9,7 @@ export class TourStandService {
 
   constructor(private http: HttpClient) { }
 
-  add(idS: number, idT: number, nPersone: number) {
+  add(idS: number, idT: number, nPersone: any) {
     return this.http.post(`${this.url}/${idS}/${idT}/${nPersone}`,{});
   }
 

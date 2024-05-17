@@ -9,7 +9,7 @@ export class TourService {
 
   constructor(private http: HttpClient) { }
 
-  add(tour: any){
-    return this.http.post(`${this.url}/add`,tour);
+  add(){
+    return this.http.post(`${this.url}/add`,{});
   }
 }

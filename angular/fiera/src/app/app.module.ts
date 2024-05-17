@@ -16,7 +16,6 @@ import { CdkMenuModule } from '@angular/cdk/menu';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDividerModule } from '@angular/material/divider';
-import { StandComponent } from './modals/stand/stand.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -30,7 +29,6 @@ import { MatStepperModule } from '@angular/material/stepper';
     BookingComponent,
     LoginComponent,
     RegisterComponent,
-    StandComponent
   ],
   imports: [
     BrowserModule,
