@@ -1,0 +1,16 @@
+<div class="container">
+    <div>
+        <form class="form" [formGroup]="user" (submit)="login()">
+            <a class="login">Log in</a>
+            <div class="inputBox">
+                <input type="text" required="required" formControlName="email">
+                <span class="user">Email</span>
+            </div>
+            <div class="inputBox">
+                <input type="password" required="required" formControlName="password">
+                <span>Password</span>
+            </div>
+            <button class="enter">Enter</button>
+        </form>
+    </div>
+</div>

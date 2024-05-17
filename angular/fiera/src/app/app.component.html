@@ -1,0 +1,25 @@
+<div class="m-4" style="align-items: center;">
+    <mat-icon [cdkMenuTriggerFor]="logged" class="menuTrigger" *ngIf="user">explore</mat-icon>
+    <ng-template #logged>
+        <div class="menu" cdkMenu style="align-items: center;">
+            <button class="btn btn-warning rounded-5" (click)="logout()">
+                <i class="bi bi-person-raised-hand"></i>
+            </button>
+            <button class="btn btn-warning rounded-5">
+                <a routerLink="/storico/{{user.id}}" class="nav-item nav-link"><i class="bi bi-basket-fill"></i></a>
+            </button>
+        </div>
+    </ng-template>
+    <mat-icon [cdkMenuTriggerFor]="notLogged" class="menuTrigger" *ngIf="!user">explore</mat-icon>
+    <ng-template #notLogged>
+        <div class="menu" cdkMenu style="align-items: center;">
+            <button class="btn btn-warning rounded-5" (click)="openLogin()">
+                <i class="bi bi-person-walking"></i>
+            </button>
+            <button class="btn btn-warning rounded-5" (click)="openRegister()">
+                <i class="bi bi-person-add"></i>
+            </button>
+        </div>
+    </ng-template>
+</div>
+<router-outlet></router-outlet>

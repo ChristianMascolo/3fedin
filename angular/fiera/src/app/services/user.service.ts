@@ -14,7 +14,7 @@ export class UserService {
   }
 
   findByEmail(email: string){
-    return this.http.get(`${this.url}/findByEmail/${email}`);
+    return this.http.get(`${this.url}/getByEmail/${email}`);
   }
 
 }

@@ -12,4 +12,8 @@ export class StandService {
   add(stand: any){
     return this.http.post(`${this.url}/add`,stand);
   }
+
+  all(){
+    return this.http.get(`${this.url}/all`);
+  }
 }
