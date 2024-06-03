@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="card col-3">
+    <img src="assets/img/prod1.png" alt="" (click)="addToCart(100)" style="cursor: pointer;"/>
+    <h6>100€</h6>
+  </div>
+  <div class="card col-3">
+    <img src="assets/img/prod2.png" alt="" (click)="addToCart(250)" style="cursor: pointer;"/>
+    <h6>250€</h6>
+  </div>
+  <div class="card col-3">
+    <img src="assets/img/prod3.png" alt="" (click)="addToCart(500)" style="cursor: pointer;"/>
+    <h6>500€</h6>
+  </div>
+  <div class="card col-3">
+    <img src="assets/img/prod4.png" alt="" (click)="addToCart(300)" style="cursor: pointer;"/>
+    <h6>300€</h6>
+  </div>
+</div>
+<div class="row">
+  <p>Total {{ amount }}€</p>
+  <i class="bi bi-bank fs-1" style="color: red;" (click)="pay('bank')"></i>
+  <i class="bi bi-paypal fs-1" style="color: blue;" (click)="pay('paypal')"></i>
+  <i class="bi bi-credit-card fs-1" style="color: black;" (click)="pay('card')"></i>
+</div>
