@@ -1,0 +1,13 @@
+<div class="form-container">
+    <p class="title">Welcome back</p>
+    <form class="form" [formGroup]="form" (submit)="onSubmit()">
+        <input type="email" class="input" placeholder="Email" formControlName="email">
+        <input type="password" class="input" placeholder="Password" formControlName="password">
+        <p class="page-link">
+        </p>
+        <button class="form-btn">Log in</button>
+    </form>
+    <p class="sign-up-label">
+        Don't have an account?<a [href]="['register']">Sign up</a>
+    </p>
+</div>

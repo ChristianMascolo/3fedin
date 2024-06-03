@@ -1,0 +1,22 @@
+<div class="container" style="display: inline-flex;align-items: center;">
+    <a href="">
+        <img src="assets/img/logo.png" alt="..." class="logo">
+    </a>
+    <ul class="nav">
+        <li *ngIf="!logged()">
+            <button class=" btn btn-custom" (click)="goLogin()">Login</button>
+        </li>
+        <li class="nav-item" *ngIf="logged()">
+            <button class="btn btn-custom" (click)="logout()">Logout</button>
+        </li>
+        <li class="nav-item" *ngIf="logged()">
+            <button class="btn btn-custom">Profile</button>
+        </li>
+        <li class="nav-item" *ngIf="isAdmin()">
+            <button class="btn btn-custom" (click)="addProperty()">
+                <i class="bi bi-database-add"></i>
+            </button>
+        </li>
+    </ul>
+</div>
+<router-outlet></router-outlet>

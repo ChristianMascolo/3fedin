@@ -1,0 +1,46 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+@import '~bootstrap-icons/font/bootstrap-icons.css';
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.btn-custom {
+    color: #8AAA9F;
+    background-color: #ffffff;
+    border-color: #8AAA9F;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
+
+.btn-custom {
+    color: #8AAA9F;
+    background-color: #ffffff;
+    border-color: #8AAA9F;
+    font-weight: bold;
+    border-radius: 50;
+}
+
+.btn-custom:hover,
+.btn-custom:active,
+.btn-custom:focus,
+.btn-custom.active {
+    background: #8AAA9F;
+    color: #ffffff;
+    border-color: #8AAA9F;
+}
+
+.logo {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+}

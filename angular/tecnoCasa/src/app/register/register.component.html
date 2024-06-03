@@ -1,0 +1,19 @@
+<div class="form-container">
+    <p class="title">Welcome</p>
+    <form class="form" [formGroup]="form" (submit)="submit()">
+        <input type="text" class="input" placeholder="Nome" formControlName="name">
+        <input type="text" class="input" placeholder="Cognome" formControlName="surname">
+        <input type="email" class="input" placeholder="Email" formControlName="email">
+        <input type="password" class="input" placeholder="Password" formControlName="password">
+        <label for="" style="align-items: center; justify-content: center;">
+            <input type="checkbox" class="input" value="admin" formControlName="admin"/>
+            Admin?
+        </label>
+        <p class="page-link">
+        </p>
+        <button class="form-btn">Register</button>
+    </form>
+    <p class="sign-up-label">
+        Already have an account?<a [href]="['login']">Sign in</a>
+    </p>
+</div>

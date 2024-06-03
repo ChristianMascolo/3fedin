@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-10 mx-auto">
+      <div class="career-search mb-60">
+        <div class="filter-result">
+          <div class="job-box d-md-flex align-items-center justify-content-between mb-30" *ngFor="let p of properties">
+            <div class="job-left my-4 d-md-flex align-items-center flex-wrap">
+              <div class="img-holder mr-md-4 mb-md-0 mb-4 mx-auto mx-md-0 d-md-none d-lg-flex" >
+                <button class="btn mdc-button--outlined" (click)="appointment()">
+                  <i class="bi bi-house"></i>
+                </button>
+              </div>
+              <div class="job-content">
+                <h5 class="text-center text-md-left">Tipologia: {{p.type}}</h5>
+                <ul class="d-md-flex flex-wrap text-capitalize ff-open-sans">
+                  <li class="mr-md-4">
+                    <i class="bi bi-signpost"></i>{{p.address}} <br>
+                  </li>
+                  <li class="mr-md-4">
+                      <p style="visibility: hidden;"> t</p>
+                  </li>
+                  <li class="mr-md-4">
+                    <i class="bi bi-cash"></i> {{p.price | currency: 'EUR'}}
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="job-right my-4 flex-shrink-0">
+              <a [routerLink]="['/details/',p.id]" class="btn d-block w-100 d-sm-inline-block btn-light">Dettagli</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

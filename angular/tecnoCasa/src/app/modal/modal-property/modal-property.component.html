@@ -1,0 +1,16 @@
+<div class="form-container">
+    <p class="title">Welcome back</p>
+    <form class="form" [formGroup]="form" (submit)="onSubmit()">
+        <input type="text" class="input" placeholder="Tipo" formControlName="type">
+        <input type="text" class="input" placeholder="Indirizzo" formControlName="address">
+        <textarea type="text" class="input" placeholder="Descrizione" formControlName="description"></textarea>
+        <input type="file" class="input"  multiple="multiple" name="file" (change)="onFileChange($event)" accept=".png">
+        <input type="number" class="input" placeholder="price" formControlName="price">
+        <input type="number" class="input" placeholder="rooms" formControlName="rooms">
+        <input type="number" class="input" placeholder="parkingPlace" formControlName="parkingPlace">
+        <input type="number" class="input" placeholder="dimension" formControlName="dimension">
+        <p class="page-link">
+        </p>
+        <button class="form-btn">Add</button>
+    </form>
+</div>
