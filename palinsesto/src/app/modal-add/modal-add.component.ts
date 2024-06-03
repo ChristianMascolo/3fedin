@@ -14,7 +14,7 @@ import { Program } from '../model/Program';
 
 
 @Component({
-  selector: 'app-modal-add',
+  selector: 'app-modal-property',
   templateUrl: './modal-add.component.html',
   styleUrls: ['./modal-add.component.scss'],
 })
