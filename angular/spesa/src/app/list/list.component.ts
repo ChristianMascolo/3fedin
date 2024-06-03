@@ -8,26 +8,24 @@ import { Product } from '../model/Product';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent {
-  products !: Array<Product>
+  products: Array<Product> = []
 
   constructor(private ps: ProductService) {
-    this.ps.all().subscribe({
-      next: (res) => {
-        this.ps.getProductList().next(res);
-        this.products = res;
-      }
-    })
-
+    this.ps.getProductList().subscribe(data => this.products = data);
   }
 
-  add(p: Product){
+  add(p: Product) {
     this.ps.getCart().next(p);
   }
 
-  remove(id: number){
+  remove(id: number) {
     this.ps.delete(id).subscribe({
       next: () => {
-        this.ps.getCart().subscribe();
+        this.ps.all().subscribe({
+          next: (res: any) => {
+            this.products = res;
+          }
+        })
       }
     })
   }

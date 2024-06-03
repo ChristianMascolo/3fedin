@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Product } from '../model/Product';
-import { Observable, Subject } from 'rxjs';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +9,7 @@ import { Observable, Subject } from 'rxjs';
 export class ProductService {
   private url = "http://localhost:8080/api/product"
   private cart: Subject<Product> = new Subject<Product>();
-  private productList: Subject<Array<Product>> = new Subject<Array<Product>>();
+  private productList: Subject<Product[]> = new Subject<Product[]>();
 
   constructor(private http: HttpClient) { }
 

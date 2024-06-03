@@ -21,8 +21,12 @@ export class ToolsComponent {
   add() {
     let products: any[] = [this.productDb()]
     this.ps.add(products).subscribe({
-      next: (res) => { 
-        //this.ps.getProductList().next(res);
+      next: () => {
+        this.ps.all().subscribe({
+          next: (res) => {
+            this.ps.getProductList().next(res);
+          }
+        })
       }
     })
   }

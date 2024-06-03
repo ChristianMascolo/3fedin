@@ -9,22 +9,29 @@ import { Product } from './model/Product';
 })
 export class AppComponent {
   title = 'spesa';
-  inputList: Array<Product> = [];
+  cart: Array<Product> = [];
 
   constructor(private ps: ProductService) {
-    this.ps.getCart().subscribe(data => this.inputList.push(data));
-  }
+    this.ps.getCart().subscribe(data => this.cart.push(data));
 
-  submit(input: Product) {
-    this.ps.getCart().next(input);
-    console.log(input);
+    this.ps.all().subscribe({
+      next: (res) => {
+        this.ps.getProductList().next(res);
+      }
+    });
   }
 
   total() {
     let tmp = 0.
-    this.inputList.forEach(c => {
+    this.cart.forEach(c => {
       tmp += c.price;
     })
     return tmp;
+  }
+
+  removeFromCart(id: number) {
+    this.cart = this.cart.filter(c => c.id !== id);
+
+    this.cart.forEach(c =>  this.ps.getCart().next(c));
   }
 }

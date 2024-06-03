@@ -1,12 +1,18 @@
+<p> COMPONENTE LISTA PRODOTTI </p>
 <app-list></app-list>
+<p> COMPONENTE LISTA CARELLO</p>
 <div class="container-fluid">
     <ul>
-        <li *ngFor="let p of inputList;">
+        <li *ngFor="let p of cart">
             {{p.name}}
+            <button class="btn btn-danger" (click)="removeFromCart(p.id)">
+                Rimuovi
+            </button>
         </li>
         <li>
-            {{total()}}€
+            {{total() | currency:'EUR'}}
         </li>
     </ul>
 </div>
+<p> COMPONENTE FORM PER AGGIUNGERE ELEMENTI </p>
 <app-tools></app-tools>
