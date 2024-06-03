@@ -1,0 +1,9 @@
+<div class="card text-center" *ngFor="let s of stands">
+  <div class="card-header">
+    {{s.name}}
+  </div>
+  <div class="card-body">
+    <p class="card-text">{{s.description}}</p>
+    <button class="btn btn-primary" (click)="openBooking()">Prenota</button>
+  </div>
+</div>

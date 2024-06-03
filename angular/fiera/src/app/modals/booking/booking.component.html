@@ -1,0 +1,35 @@
+<mat-stepper #stepper>
+  <mat-step [stepControl]="booking" errorMessage="Name is required.">
+    <form [formGroup]="booking">
+      <ng-template matStepLabel>Set date</ng-template>
+      <div class="form-floating mb-3 m-5">
+        <input type="date" class="form-control" id="floatingInput" formControlName="date">
+        <label for="floatingInput">Title</label>
+      </div>
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="tour" errorMessage="Address is required.">
+    <form [formGroup]="tour">
+      <ng-template matStepLabel>Tour</ng-template>
+      <div class="form-floating mb-3 m-5">
+        <input type="number" class="form-control" id="floatingInput" formControlName="nPersone">
+        <label for="floatingInput">nPersone</label>
+      </div>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    <p>You are now done.</p>
+    <div>
+      <button mat-button (click)="submit()">Done</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+    </div>
+  </mat-step>
+</mat-stepper>

@@ -7,16 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'cinema';
-  userSession !: any;
 
-  ngOnInit() {
-    if (localStorage.getItem("username")) {
-      this.userSession = localStorage.getItem("username");
-    } 
-  }
 
   logout(){
-    localStorage.removeItem("username");
-    this.userSession = null;
+    localStorage.removeItem("userSession");
+  }
+
+  userLogged(){
+    return localStorage.getItem("userSession");
   }
 }

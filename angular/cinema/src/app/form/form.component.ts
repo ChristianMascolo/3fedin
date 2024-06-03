@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, afterNextRender } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UserService } from '../services/user.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
@@ -16,11 +16,13 @@ export class FormComponent {
   loginForm = new FormGroup({
     name: new FormControl("", [Validators.required, Validators.minLength(5)]),
     password: new FormControl("", [Validators.required, Validators.minLength(5)]),
+    email: new FormControl("", [Validators.email, Validators.required]),
   });
 
   registerForm = new FormGroup({
     name: new FormControl("", [Validators.required, Validators.minLength(5)]),
     lastName: new FormControl("", [Validators.required, Validators.minLength(5)]),
+    email: new FormControl("", [Validators.email, Validators.required]),
     password: new FormControl("", [Validators.required, Validators.minLength(5),]),
     confirmPassword: new FormControl("", [Validators.required, Validators.minLength(5)]),
   });
@@ -44,7 +46,21 @@ export class FormComponent {
 
   doLogin() {
     console.log(this.loginForm.value);
-    this.userService.checkIfExist(this.loginForm.value.name).subscribe();
+    /* let utility = {
+      "name": this.loginForm.value.name,
+      "password": this.loginForm.value.password,
+      "email": this.loginForm.value.email,
+    } */
+    this.userService.checkIfExist(this.loginForm.value.name, this.loginForm.value.email).subscribe({
+      next: (res: any) => {
+        console.log(res);
+        /*  this.userService.add(utility).subscribe({
+           next: () => {
+             console.log("utente aggiunto");
+           }
+         }) */
+      }
+    });
   }
 
   doRegister() {
@@ -52,20 +68,12 @@ export class FormComponent {
       "name": this.registerForm.value.name,
       "surname": this.registerForm.value.lastName,
       "password": this.registerForm.value.password,
+      "email": this.registerForm.value.email,
     }
-    this.userService.checkIfExist(utility.name).subscribe({
-      next: (res) => {
-        console.log(res);
-        /* if (res == null) {
-          this.userService.add(utility).subscribe({
-            next: () => {
-              console.log("utente aggiunto");
-            }
-          })
-        } else {
-          console.log("user già esistente");
-        } */
+    this.userService.add(utility).subscribe({
+      next: (res)=>{
+        document.location.href="http://localhost:4200/"
       }
-    });
+    })
   }
 }

@@ -8,6 +8,7 @@ import { CatalogoComponent } from './catalogo/catalogo.component';
 
 const routes: Routes = [
   { path: 'film', component: FilmComponent },
+  { path: 'prenota/:idF', component: TicketComponent },
   { path: 'prenota/:idF/:idU', component: TicketComponent },
   { path: 'form/:type', component: FormComponent },
   { path: 'googleForm', component: GoogleModuleComponent },

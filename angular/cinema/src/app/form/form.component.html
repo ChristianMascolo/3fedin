@@ -6,6 +6,13 @@
         </div>
         <br />
         <div class="form-group">
+            <label for="email">Email: </label>
+            <input type="email" id="email" formControlName="email" class="form-control">
+            <div *ngIf="registerForm.controls.email.invalid">
+                <p>Email necessaria</p>
+            </div>
+        </div>
+        <div class="form-group">
             <label for="password">Password </label>
             <input id="password" type="text" formControlName="password" class=" form-control" />
             <div *ngIf="loginForm.controls.password.invalid && (loginForm.controls.name.dirty ||
@@ -13,8 +20,10 @@
             </div>
         </div>
         <br />
-        <button class="btn btn-primary" type="submit" [disabled]="!loginForm.valid">Login</button>
-        <p [routerLink]="['/form','r']">Register</p>
+        <div clas="form-group">
+            <button class="btn btn-primary" type="submit" [disabled]="!loginForm.valid">Login</button>
+            <p [routerLink]="['/form','r']">Register</p>
+        </div>
     </form>
 </div>
 
@@ -31,6 +40,13 @@
             <div *ngIf="registerForm.controls.lastName.invalid && (registerForm.controls.lastName.dirty ||
             registerForm.controls.lastName.touched)">
                 <p>Campo obbligatorio</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email">Email: </label>
+            <input type="email" id="email" formControlName="email" class="form-control">
+            <div *ngIf="registerForm.controls.email.invalid">
+                <p>Email necessaria</p>
             </div>
         </div>
         <div class="form-group">

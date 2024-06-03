@@ -17,7 +17,7 @@ export class UserService {
     return this.http.post(`${this.url}add`, user);
   }
 
-  checkIfExist(name: any) {
-    return this.http.get(`${this.url}searchName/${name}`);
+  checkIfExist(name: any,email: any) {
+    return this.http.get(`${this.url}searchUser/${name}/${email}`);
   }
 }
