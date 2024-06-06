@@ -1,0 +1,5 @@
+<div *ngIf="logged">
+    <i class="bi bi-box-arrow-right fs-1" (click)="logout()"></i>
+    <i class="bi bi-plus fs-1" *ngIf="admin" (click)="addBranch()"></i>
+</div>
+<router-outlet></router-outlet>

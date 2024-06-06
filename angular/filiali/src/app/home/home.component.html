@@ -1,0 +1,63 @@
+<div
+  class="card col-md-3 "
+  *ngFor="let b of branchs"
+  style="height: fit-content"
+>
+  <div class="card-header d-inline-block" >
+    <ul class="nav nav-tabs card-header-tabs" data-bs-tabs="tabs">
+      <li class="nav-item">
+        <a
+          class="nav-link active"
+          aria-current="true"
+          data-bs-toggle="tab"
+          href="#info{{ b.id }}"
+          >Info Generali</a
+        >
+      </li>
+      <li class="nav-item">
+        <a href="#revenue{{b.id}}" class="nav-link" data-bs-toggle="tab" (click)="loadRevenue(b.id)">Fatturato</a>
+      </li>
+      <li class="nav-item">
+        <a href="#orders{{b.id}}" class="nav-link" data-bs-toggle="tab" (click)="loadOrder(b.id)">Ordini</a>
+      </li>
+    </ul>
+  </div>
+  <div class="card-body tab-content container-fluid">
+    <div class="tab-pane active container-fluid" id="info{{b.id}}">
+      {{ b.name }}<mat-divider></mat-divider>
+      {{b.city}}<mat-divider></mat-divider>
+      {{b.address}}<mat-divider></mat-divider>
+    </div>
+    <div class="tab-pane container-fluid" id="revenue{{b.id}}">
+      <table class="table">
+        <thead>
+          <th>Mese</th>
+          <th>Anno</th>
+          <th>Total</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let r of revenues">
+            <td>{{r.month}}</td>
+            <td>{{r.year}}</td>
+            <td>{{r.total}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tab-pane container-fluid" id="orders{{b.id}}">
+      <table class="table">
+        <thead>
+          <th>Stato</th>
+          <th>Codice</th>
+          <th>Cliente</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let o of orders">
+            <td>{{o.type}}</td>
+            <td>{{o.code}}</td>
+            <td>{{o.client.name}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>

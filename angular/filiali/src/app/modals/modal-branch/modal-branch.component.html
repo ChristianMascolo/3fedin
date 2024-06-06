@@ -1,0 +1,32 @@
+<form (submit)="registerBranch()" [formGroup]="branch">
+    <input
+      class="form-control"
+      type="text"
+      formControlName="name"
+      placeholder="nome"
+    /><br />
+    <input
+      class="form-control"
+      type="text"
+      formControlName="city"
+      placeholder="city"
+    /><br />
+    <input
+      class="form-control"
+      type="text"
+      formControlName="address"
+      placeholder="address"
+    /><br />
+    <input
+      class="form-control"
+      type="text"
+      formControlName="email"
+      placeholder="email@example.com"
+    /><br />
+    <input
+      class="form-control"
+      type="password"
+      placeholder="password"
+    /><br />
+    <button class="btn btn-primary" type="submit">Register</button>
+  </form>

@@ -1,0 +1,41 @@
+<div class="card">
+  <div class="card-header">
+    <button (click)="openAdminLogin()" class="btn btn-primary">
+      Login Admin
+    </button>
+    <button (click)="openBranchLogin()" class="btn btn-primary">
+      Login Branch
+    </button>
+    <a [routerLink]="['register']">Registrati</a>
+  </div>
+  <div class="card-body">
+    <div *ngIf="adminLogin">
+      <form (submit)="loginAdmin()" [formGroup]="admin">
+        <input
+        class="form-control"
+          type="text"
+          formControlName="email"
+          placeholder="email@example.com"
+        /><br />
+        <input class="form-control"
+          type="password"
+          formControlName="password"
+          placeholder="password"
+        /><br />
+        <button class="btn btn-primary" type="submit">Login</button>
+      </form>
+    </div>
+    <div *ngIf="branchLogin">
+      <form (submit)="loginBranch()" [formGroup]="branch">
+        <input class="form-control" type="text" formControlName="name" placeholder="nome" /><br />
+        <input class="form-control"
+          type="text"
+          formControlName="email"
+          placeholder="email@example.com"
+        /><br />
+        <input class="form-control" type="password" placeholder="password" /><br />
+        <button class="btn btn-primary" type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+</div>

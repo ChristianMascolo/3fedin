@@ -1,0 +1,65 @@
+<div class="card">
+  <div class="card-header">
+    <button (click)="openAdminRegister()" class="btn btn-primary">
+      Register Admin
+    </button>
+    <button (click)="openBranchRegister()" class="btn btn-primary">
+      Register Branch
+    </button>
+    <a [routerLink]="['']">Login</a>
+  </div>
+  <div class="card-body">
+    <div *ngIf="adminRegister">
+      <form (submit)="registerAdmin()" [formGroup]="admin">
+        <input
+          class="form-control"
+          type="text"
+          formControlName="email"
+          placeholder="email@example.com"
+        /><br />
+        <input
+          class="form-control"
+          type="password"
+          formControlName="password"
+          placeholder="password"
+        /><br />
+        <button class="btn btn-primary" type="submit">Register</button>
+      </form>
+      <form action=""></form>
+    </div>
+    <div *ngIf="branchRegister">
+      <form (submit)="registerBranch()" [formGroup]="branch">
+        <input
+          class="form-control"
+          type="text"
+          formControlName="name"
+          placeholder="nome"
+        /><br />
+        <input
+          class="form-control"
+          type="text"
+          formControlName="city"
+          placeholder="city"
+        /><br />
+        <input
+          class="form-control"
+          type="text"
+          formControlName="address"
+          placeholder="address"
+        /><br />
+        <input
+          class="form-control"
+          type="text"
+          formControlName="email"
+          placeholder="email@example.com"
+        /><br />
+        <input
+          class="form-control"
+          type="password"
+          placeholder="password"
+        /><br />
+        <button class="btn btn-primary" type="submit">Register</button>
+      </form>
+    </div>
+  </div>
+</div>
