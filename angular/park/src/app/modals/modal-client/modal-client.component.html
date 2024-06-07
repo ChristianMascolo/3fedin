@@ -1,0 +1,21 @@
+<div class="container">
+  <form (submit)="submit()" [formGroup]="client">
+    <div class="md-3">
+      <label for="name" class="form-label">Nome</label>
+      <input type="text" class="form-control" formControlName="name" />
+    </div>
+    <div class="md-3">
+        <label for="surname" class="form-label">Cognome</label>
+      <input type="text" class="form-control" formControlName="surname" />
+    </div>
+    <div class="md-3">
+        <label for="age" class="form-label">Età</label>
+      <input type="text" class="form-control" formControlName="age" />
+    </div>
+    <div class="md-3">
+        <label for="height" class="form-label">Altezza(cm)</label>
+      <input type="text" class="form-control" formControlName="height" />
+    </div>
+    <button type="submit" class="btn btn-primary">Inserisci</button>
+  </form>
+</div>
