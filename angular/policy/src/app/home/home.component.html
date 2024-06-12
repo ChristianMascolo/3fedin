@@ -1,0 +1,34 @@
+<table class="table">
+  <thead>
+    <tr>
+      <td>Nome</td>
+      <td>Dettagli</td>
+      <td>Prezzo</td>
+      <td>Durata</td>
+      <td>Clienti</td>
+      <td></td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let policy of policies" >
+      <td [ngClass]="expired(policy.type) ? 'notExpired' : 'expired'">
+        {{ policy.name }}
+      </td>
+      <td [ngClass]="expired(policy.type) ? 'notExpired' : 'expired'">
+        {{ policy.details }}
+      </td>
+      <td [ngClass]="expired(policy.type) ? 'notExpired' : 'expired'">
+        {{ policy.price }}
+      </td>
+      <td [ngClass]="expired(policy.type) ? 'notExpired' : 'expired'">
+        {{ policy.duration }}
+      </td>
+      <td [ngClass]="expired(policy.type) ? 'notExpired' : 'expired'">
+        <p *ngFor="let client of policy.client">{{client.name}}</p>
+      </td>
+      <td [ngClass]="expired(policy.type) ? 'notExpired' : 'expired'">
+        <p [routerLink]="['addClient',policy.id]" style="cursor: pointer;">Aggiungi un cliente</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
