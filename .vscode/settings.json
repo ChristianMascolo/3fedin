@@ -1,3 +1,30 @@
 {
-    "liveServer.settings.port": 5501
+    "liveServer.settings.port": 5501,
+    "cSpell.words": [
+        "Aggiungi",
+        "Altezza",
+        "Cliente",
+        "Codice",
+        "Cognome",
+        "Dettagli",
+        "Durata",
+        "Fatturato",
+        "Informazioni",
+        "Inserisci",
+        "latlng",
+        "Mappa",
+        "Mese",
+        "Neighbour",
+        "Ordine",
+        "Ordini",
+        "Personali",
+        "polizza",
+        "Prezzo",
+        "Stato",
+        "Tipo"
+    ],
+    "cSpell.ignoreWords": [
+        "asymmetrik",
+        "clienti"
+    ]
 }
